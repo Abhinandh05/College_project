@@ -1,4 +1,4 @@
-import { ChartNoAxesColumn, SquareLibrary } from "lucide-react";
+import { ChartNoAxesColumn, SquareLibrary, Briefcase, Building } from "lucide-react";
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
@@ -22,6 +22,22 @@ const Sidebar = () => {
             <SquareLibrary size={22} />
             <h1 className="font-medium">Courses</h1>
           </Link>
+          <Link
+            to="CompanyDetails"
+            className="flex items-center gap-2 p-3 rounded-md transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-blue-500 dark:hover:text-blue-400"
+          >
+            <Building size={22} />
+            <h1 className="font-medium">Company</h1>
+          </Link>
+          <Link
+            to="jobDetails"
+            className="flex items-center gap-2 p-3 rounded-md transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-blue-500 dark:hover:text-blue-400"
+          >
+            <Briefcase size={22} />
+            <h1 className="font-medium">Job</h1>
+          </Link>
+        
+         
         </div>
       </div>
 

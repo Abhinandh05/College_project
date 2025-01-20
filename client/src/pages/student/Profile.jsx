@@ -20,6 +20,7 @@ import {
   useUpdateUserMutation,
 } from "@/features/api/authApi";
 import { toast } from "sonner";
+import AppliedJobsTable from "../AppliedJobsTable";
 
 const Profile = () => {
   const [name, setName] = useState("");
@@ -177,6 +178,14 @@ const Profile = () => {
           )}
         </div>
       </div>
+
+      <div className="w-full p-6">
+  <div className="w-full max-w-screen-xl mx-auto">
+    <AppliedJobsTable />
+  </div>
+</div>
+
+      
       
    
     </div>

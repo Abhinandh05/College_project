@@ -1,22 +1,6 @@
 import mongoose from "mongoose";
 
-// Define the Course schema
-// const courseSchema = new mongoose.Schema({
-//   title: {
-//     type: String,
-//     required: true,
-//     unique: true,
-//   },
-//   description: {
-//     type: String,
-//     required: true,
-//   },
-//   // other fields as needed
-// });
 
-// export const Course = mongoose.model("Course", courseSchema);
-
-// Define the User schema
 const userSchema = new mongoose.Schema(
   {
     name: {

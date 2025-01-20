@@ -38,6 +38,25 @@ import SearchPage from './pages/student/SearchPage';
 import { AdminRoute, AuthenticatedUser, ProtectedRoute } from './components/ProtectedRoutes';
 import { ThemeProvider } from './components/ThemeProvider';
 
+import GetCompany from './pages/admin/GetCompany';
+import RegisterCompany from './pages/admin/RegisterCompany';
+import CompanyDetails from './pages/admin/CompanyDetails';
+import PostJobForm from './pages/admin/PostJobForm';
+import JobTable from './pages/admin/JobTable';
+import Job from './pages/Job';
+
+import ViewApplicants from './pages/admin/ViewApplicants';
+import JobDetails from './pages/JobDetails';
+import MainContent from './components/ChatBot/MainContent';
+import ContextProvider from './components/ChatBot/context/Context';
+
+import Final from './components/Resume/Final';
+import PurchaseCourseProtectedRoute from './components/PurchaseCourseProtectedRoute';
+
+
+
+
+
 
 // Defining the routes
 const routes = [
@@ -77,8 +96,11 @@ const routes = [
       {
         path: 'course-progress/:courseId',
         element: <ProtectedRoute>
+          <PurchaseCourseProtectedRoute>
+            <CourseProgress />
+          </PurchaseCourseProtectedRoute>
+        </ProtectedRoute>,
 
-          <CourseProgress /></ProtectedRoute>,
       },
 
 
@@ -88,9 +110,21 @@ const routes = [
 
       },
       {
+        path: 'resume-builder',
+        element: <Final />,
+
+      },
+
+      {
+
+        path: '/student-chatbot',
+        element: <ContextProvider><MainContent /> </ContextProvider>,
+      },
+      {
         path: 'interview',
         element: <AddButton />,
       },
+
       {
         path: "interviewForm",
         element: <InterviewForm />
@@ -108,6 +142,14 @@ const routes = [
         path: "CordingPracticeAreas",
         element: <Card />
 
+      },
+      {
+        path: "job-application-portal",
+        element: <Job />
+      },
+      {
+        path: "/description/:id",
+        element: <JobDetails />
       },
       {
         path: "python-section",
@@ -172,6 +214,36 @@ const routes = [
             path: 'course',
             element: <CourseTable />,
           },
+          {
+            path: 'CompanyDetails',
+            element: <GetCompany />,
+
+          },
+          {
+            path: 'CompanyDetails/register',
+            element: <RegisterCompany />,
+
+          },
+          {
+            path: 'CompanyDetails/:id',
+            element: <CompanyDetails />,
+
+          },
+          {
+            path: 'jobDetails',
+            element: <JobTable />,
+
+          },
+          {
+            path: 'jobDetails/view-applicants/:id',
+            element: <ViewApplicants />,
+          },
+          {
+            path: 'jobDetails/createJob',
+            element: <PostJobForm />,
+
+          },
+
           {
             path: 'course/create',
             element: <AddCourse />

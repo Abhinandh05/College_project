@@ -28,14 +28,14 @@ const Course = ({ course }) => {
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-3'>
             <Avatar className="h-8 w-8">
-              <AvatarImage src={creator.photoUrl || "https://via.placeholder.com/40"} alt={creator.name || "Creator"} />
-              <AvatarFallback>{(creator.name || 'CN')[0]}</AvatarFallback>
+              <AvatarImage src={creator?.photoUrl || "https://res.cloudinary.com/duzqm4jmh/image/upload/v1736052193/rchy6kcoscwucrtivyxq.jpg"} alt={creator.name || "Creator"} />
+              <AvatarFallback>{(creator?.name || 'Abhinandh')[0]}</AvatarFallback>
             </Avatar>
-            <h1 className='font-medium text-sm'>{creator.name || 'Unknown Creator'}</h1>
+            <h1 className='font-medium text-sm'>{creator?.name || 'Abhinandh'}</h1>
           </div>
           <Badge className={'bg-blue-600 text-white px-2 py-1 text-sm rounded-full'}>
             {courseLevel || 'Unknown Level'}
-          </Badge>
+          </Badge>    
         </div>
         <div className='text-lg font-bold'>
           <span>₹{coursePrice || '0'}</span>
